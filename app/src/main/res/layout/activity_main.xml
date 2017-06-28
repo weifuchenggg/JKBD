@@ -11,7 +11,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:background="@color/colorAccent"
         android:layout_gravity="center"
         android:layout_weight="1"
         >
@@ -21,12 +20,14 @@
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_gravity="center"
+            android:layout_marginLeft="80dp"
             app:srcCompat="@android:drawable/btn_dropdown" />
 
         <ImageButton
             android:id="@+id/imageButton3"
             android:layout_width="100dp"
             android:layout_height="100dp"
+            android:layout_marginLeft="20dp"
             android:layout_gravity="center"
             app:srcCompat="@mipmap/ic_launcher_round" />
 
@@ -43,6 +44,7 @@
             android:id="@+id/imageButton"
             android:layout_width="100dp"
             android:layout_height="100dp"
+            android:layout_marginLeft="80dp"
             app:srcCompat="@android:drawable/btn_star_big_on" />
 
 
@@ -50,6 +52,7 @@
             android:id="@+id/imageButton4"
             android:layout_width="100dp"
             android:layout_height="100dp"
+            android:layout_marginLeft="20dp"
             app:srcCompat="@mipmap/ic_launcher" />
 
     </LinearLayout>
