@@ -7,7 +7,6 @@
     tools:context="com.example.administrator.jkbd.activity.MainActivity"
     android:baselineAligned="false"
     android:background="@mipmap/main"
-    android:theme="@style/Theme.AppCompat.Light.NoActionBar"
     android:orientation="vertical">
     <LinearLayout
         android:layout_width="match_parent"
@@ -55,7 +54,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="全部测试" />
+                android:text="         全部测试" />
         </LinearLayout>
 
     </LinearLayout>
@@ -107,7 +106,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="退出" />
+                android:text="          退出" />
         </LinearLayout>
 
     </LinearLayout>
