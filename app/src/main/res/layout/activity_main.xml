@@ -21,12 +21,14 @@
             android:orientation="vertical"
             android:layout_gravity="bottom"
             >
+
             <ImageButton
                 android:id="@+id/imageButton2"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_gravity="center"
                 android:background="@null"
+                android:onClick="text"
                 app:srcCompat="@mipmap/main_menu_exam" />
 
             <TextView
