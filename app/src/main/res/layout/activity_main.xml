@@ -6,6 +6,8 @@
     android:layout_height="match_parent"
     tools:context="com.example.administrator.jkbd.activity.MainActivity"
     android:baselineAligned="false"
+    android:background="@mipmap/main"
+    android:theme="@style/Theme.AppCompat.Light.NoActionBar"
     android:orientation="vertical">
     <LinearLayout
         android:layout_width="match_parent"
@@ -25,13 +27,14 @@
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_gravity="center"
-                app:srcCompat="@android:drawable/btn_dropdown" />
+                android:background="@null"
+                app:srcCompat="@mipmap/main_menu_exam" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="TextView" />
+                android:text="随机测试" />
         </LinearLayout>
         <LinearLayout
             android:layout_width="wrap_content"
@@ -46,12 +49,13 @@
             android:layout_height="100dp"
             android:layout_marginLeft="20dp"
             android:layout_gravity="center"
-            app:srcCompat="@mipmap/ic_launcher_round" />
+            android:background="@null"
+            app:srcCompat="@mipmap/main_menu_result" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="TextView" />
+                android:text="全部测试" />
         </LinearLayout>
 
     </LinearLayout>
@@ -76,13 +80,14 @@
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_gravity="center"
-                app:srcCompat="@android:drawable/btn_dropdown" />
+                android:background="@null"
+                app:srcCompat="@mipmap/main_menu_message" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="TextView" />
+                android:text="设置" />
         </LinearLayout>
         <LinearLayout
             android:layout_width="wrap_content"
@@ -96,12 +101,13 @@
                 android:layout_height="100dp"
                 android:layout_marginLeft="20dp"
                 android:layout_gravity="center"
-                app:srcCompat="@mipmap/ic_launcher_round" />
+                android:background="@null"
+                app:srcCompat="@mipmap/main_menu_exit" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="TextView" />
+                android:text="退出" />
         </LinearLayout>
 
     </LinearLayout>
