@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@mipmap/main"
     tools:context=".activity.QuestionActivity">
 
 
@@ -12,11 +13,115 @@
         android:id="@+id/imageView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         app:srcCompat="@mipmap/exam_title" />
 
     <TextView
+        android:layout_margin="10dp"
         android:id="@+id/tv_ExamInfo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="TextView" />
+        android:textSize="15dp"
+        android:text="考试科目=c1\n时限=10分钟\n考题数量=100" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#c4188b"
+        android:layout_margin="5dp"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="1.这个标志的意思是"
+        android:textSize="15dp"
+        android:layout_margin="10dp"
+        android:layout_marginTop="10dp"
+        />
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@mipmap/commit"
+        android:layout_gravity="center"
+        />
+    <TextView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" android:layout_marginTop="5dp"
+    android:layout_marginLeft="15dp"
+    android:text="A.车道数变少"
+    />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="15dp"
+        android:text="B.河流处"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="15dp"
+        android:text="C.应急车道"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="15dp"
+        android:text="D.向左变道"
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="10dp"
+            android:layout_height="wrap_content" android:text="A"/>
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_height="wrap_content" android:text="B"/>
+        <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_margin="5dp"
+        android:layout_height="wrap_content" android:text="C"/>
+        <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_margin="5dp"
+        android:layout_height="wrap_content" android:text="D"/>
+    </LinearLayout>
+    <RelativeLayout
+        android:id="@+id/rl_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/btn_pre"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@mipmap/exam_pre32x32"
+            android:background="@null"
+            android:text="上一页"
+            />
+        <Button
+            android:id="@+id/btn_next"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@mipmap/exam_next32x32"
+            android:layout_alignParentRight="true"
+            android:background="@null"
+            android:text="下一页"
+            />
+    </RelativeLayout>
+    <Button
+        android:id="@+id/btn_commit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@mipmap/exam_commit32x32"
+        android:background="@null"
+        android:text="交卷"
+        android:layout_gravity="center"
+        />
 </LinearLayout>
