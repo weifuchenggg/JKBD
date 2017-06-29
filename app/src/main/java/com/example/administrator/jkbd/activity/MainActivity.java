@@ -23,11 +23,16 @@ public class MainActivity extends AppCompatActivity {
       //  Toast.makeText(this,"dd",Toast.LENGTH_LONG).show();
         OkHttpUtils<ExamInfo>  utils=new OkHttpUtils<>(getApplicationContext());
         String url="http://101.251.196.90:8080/JztkServer/examInfo";
-        utils.url(url).targetClass(ExamInfo.class).execute(new OkHttpUtils.OnCompleteListener<ExamInfo>(){
 
+        utils.url(url).targetClass(ExamInfo.class).execute(new OkHttpUtils.OnCompleteListener<ExamInfo>(){
             @Override
             public void onSuccess(ExamInfo result) {
                 Log.e("main","success:"+result);
+                final ExamInfo examInfo;
+                examInfo=result;
+                Intent intent=new Intent(MainActivity.this,QuestionActivity.class);
+                intent.putExtra("examInfo",examInfo);
+                startActivity(intent);
             }
 
             @Override
@@ -35,8 +40,7 @@ public class MainActivity extends AppCompatActivity {
                 Log.e("main","error");
             }
         });
-        Intent intent=new Intent(MainActivity.this,QuestionActivity.class);
-        startActivity(intent);
+
     }
 
     public void btn_exit(View view) {

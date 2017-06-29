@@ -1,10 +1,12 @@
 package com.example.administrator.jkbd.bean;
 
+import java.io.Serializable;
+
 /**
  * Created by Administrator on 2017/6/29.
  */
 
-public class Exam {
+public class Exam implements Serializable{
 
 
     /**
