@@ -19,7 +19,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".activity.MainActivity"></activity>
-        <activity android:name=".activity.QuestionActivity"></activity>
+        <activity android:name=".activity.QuestionActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+        </activity>
     </application>
 
 </manifest>

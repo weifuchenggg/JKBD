@@ -54,8 +54,8 @@ public class ExamInfo {
     public String toString() {
         return "ExamInfo{" +
                 "考试科目='" + subjectTitle + '\'' +
-                ", 时限=" + limitTime +
-                ", 考题数量=" + questionCount +
+                "\n时限=" + limitTime +
+                "\n考题数量=" + questionCount +
                 '}';
     }
 }
