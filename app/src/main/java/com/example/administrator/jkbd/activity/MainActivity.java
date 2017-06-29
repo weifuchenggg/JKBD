@@ -21,4 +21,8 @@ public class MainActivity extends AppCompatActivity {
         Intent intent=new Intent(MainActivity.this,QuestionActivity.class);
         startActivity(intent);
     }
+
+    public void btn_exit(View view) {
+        finish();
+    }
 }

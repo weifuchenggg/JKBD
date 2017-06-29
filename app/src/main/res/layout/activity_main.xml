@@ -96,13 +96,15 @@
             android:layout_weight="1"
             android:orientation="vertical"
             >
+
             <ImageButton
                 android:id="@+id/imageButton5"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                android:layout_marginLeft="20dp"
                 android:layout_gravity="center"
+                android:layout_marginLeft="20dp"
                 android:background="@null"
+                android:onClick="btn_exit"
                 app:srcCompat="@mipmap/main_menu_exit" />
             <TextView
                 android:layout_width="wrap_content"
