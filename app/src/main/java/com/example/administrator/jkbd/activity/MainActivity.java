@@ -60,8 +60,22 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void all_question(View view) {
-        Intent intent=new Intent(MainActivity.this,AllQuestionActivity.class);
-        startActivity(intent);
+       // Intent intent=new Intent(MainActivity.this,AllQuestionActivity.class);
+       // startActivity(intent);
+        OkHttpUtils<String>  utils2=new OkHttpUtils<>(getApplicationContext());
+        String url2="http://www.hao123.com";
+        utils2.url(url2).targetClass(String.class).execute(new OkHttpUtils.OnCompleteListener<String>() {
+            @Override
+            public void onSuccess(String result) {
+                Log.e("main",result);
+            }
+
+            @Override
+            public void onError(String error) {
+
+            }
+        });
+
     }
 
     public void setting(View view) {

@@ -29,47 +29,53 @@
         android:background="#c4188b"
         android:layout_margin="5dp"
         />
+
     <TextView
+        android:id="@+id/tv_question"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="1."
-        android:textSize="15dp"
         android:layout_margin="10dp"
         android:layout_marginTop="10dp"
-        />
+        android:text="1."
+        android:textSize="15dp" />
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@null"
         android:layout_gravity="center"
         />
+
     <TextView
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content" android:layout_marginTop="5dp"
-    android:layout_marginLeft="15dp"
-    android:text="A."
-    />
-    <TextView
+        android:id="@+id/tv_a"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
         android:layout_marginLeft="15dp"
-        android:text="B."
-        />
+        android:layout_marginTop="5dp"
+        android:text="A." />
+
     <TextView
+        android:id="@+id/tv_b"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
         android:layout_marginLeft="15dp"
-        android:text="C."
-        />
+        android:layout_marginTop="5dp"
+        android:text="B." />
+
     <TextView
+        android:id="@+id/tv_c"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
         android:layout_marginLeft="15dp"
-        android:text="D."
-        />
+        android:layout_marginTop="5dp"
+        android:text="C." />
+
+    <TextView
+        android:id="@+id/tv_d"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="5dp"
+        android:text="D." />
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -97,24 +103,26 @@
         android:id="@+id/rl_1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
         <Button
             android:id="@+id/btn_pre"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:drawableLeft="@mipmap/exam_pre32x32"
-            android:background="@null"
             android:layout_marginLeft="15dp"
-            android:text="上一页"
-            />
+            android:background="@null"
+            android:drawableLeft="@mipmap/exam_pre32x32"
+            android:onClick="prev"
+            android:text="上一页" />
+
         <Button
             android:id="@+id/btn_next"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:drawableLeft="@mipmap/exam_next32x32"
             android:layout_alignParentRight="true"
             android:background="@null"
-            android:text="下一页"
-            />
+            android:drawableLeft="@mipmap/exam_next32x32"
+            android:onClick="next"
+            android:text="下一页" />
     </RelativeLayout>
     <Button
         android:id="@+id/btn_commit"
