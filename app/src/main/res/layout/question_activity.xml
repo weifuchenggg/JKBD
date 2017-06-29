@@ -32,7 +32,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="1.这个标志的意思是"
+        android:text="1."
         android:textSize="15dp"
         android:layout_margin="10dp"
         android:layout_marginTop="10dp"
@@ -40,35 +40,35 @@
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@mipmap/commit"
+        android:background="@null"
         android:layout_gravity="center"
         />
     <TextView
     android:layout_width="match_parent"
     android:layout_height="wrap_content" android:layout_marginTop="5dp"
     android:layout_marginLeft="15dp"
-    android:text="A.车道数变少"
+    android:text="A."
     />
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         android:layout_marginLeft="15dp"
-        android:text="B.河流处"
+        android:text="B."
         />
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         android:layout_marginLeft="15dp"
-        android:text="C.应急车道"
+        android:text="C."
         />
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         android:layout_marginLeft="15dp"
-        android:text="D.向左变道"
+        android:text="D."
         />
     <LinearLayout
         android:layout_width="match_parent"
