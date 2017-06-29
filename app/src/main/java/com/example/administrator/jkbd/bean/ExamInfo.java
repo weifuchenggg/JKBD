@@ -54,10 +54,8 @@ public class ExamInfo implements Serializable{
 
     @Override
     public String toString() {
-        return "ExamInfo{" +
-                "考试科目='" + subjectTitle + '\'' +
+        return "考试科目=" + subjectTitle  +
                 "\n时限=" + limitTime +
-                "\n考题数量=" + questionCount +
-                '}';
+                "\n考题数量=" + questionCount;
     }
 }

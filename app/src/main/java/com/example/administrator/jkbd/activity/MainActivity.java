@@ -28,10 +28,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onSuccess(ExamInfo result) {
                 Log.e("main","success:"+result);
-                final ExamInfo examInfo;
-                examInfo=result;
                 Intent intent=new Intent(MainActivity.this,QuestionActivity.class);
-                intent.putExtra("examInfo",examInfo);
+                intent.putExtra("examInfo",result);
                 startActivity(intent);
             }
 
