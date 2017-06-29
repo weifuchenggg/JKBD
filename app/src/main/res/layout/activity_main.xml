@@ -44,14 +44,16 @@
             android:layout_gravity="bottom"
             android:orientation="vertical"
             >
-        <ImageButton
-            android:id="@+id/imageButton3"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_marginLeft="20dp"
-            android:layout_gravity="center"
-            android:background="@null"
-            app:srcCompat="@mipmap/main_menu_result" />
+
+            <ImageButton
+                android:id="@+id/imageButton3"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="20dp"
+                android:background="@null"
+                android:onClick="all_question"
+                app:srcCompat="@mipmap/main_menu_result" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -76,12 +78,14 @@
             android:layout_weight="1"
             android:orientation="vertical"
             >
+
             <ImageButton
                 android:id="@+id/imageButton4"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_gravity="center"
                 android:background="@null"
+                android:onClick="setting"
                 app:srcCompat="@mipmap/main_menu_message" />
 
             <TextView

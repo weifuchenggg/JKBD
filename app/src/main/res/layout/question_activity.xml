@@ -103,6 +103,7 @@
             android:layout_height="wrap_content"
             android:drawableLeft="@mipmap/exam_pre32x32"
             android:background="@null"
+            android:layout_marginLeft="15dp"
             android:text="上一页"
             />
         <Button

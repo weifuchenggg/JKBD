@@ -25,4 +25,14 @@ public class MainActivity extends AppCompatActivity {
     public void btn_exit(View view) {
         finish();
     }
+
+    public void all_question(View view) {
+        Intent intent=new Intent(MainActivity.this,AllQuestionActivity.class);
+        startActivity(intent);
+    }
+
+    public void setting(View view) {
+        Intent intent=new Intent(MainActivity.this,Setting.class);
+        startActivity(intent);
+    }
 }
