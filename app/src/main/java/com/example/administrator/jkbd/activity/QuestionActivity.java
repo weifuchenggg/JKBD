@@ -8,6 +8,7 @@ import android.widget.TextView;
 
 import com.example.administrator.jkbd.R;
 import com.example.administrator.jkbd.bean.ExamInfo;
+import com.example.administrator.jkbd.bean.Result;
 
 public class QuestionActivity extends AppCompatActivity {
 
@@ -17,7 +18,8 @@ public class QuestionActivity extends AppCompatActivity {
         setContentView(R.layout.question_activity);
         Intent intent=this.getIntent();
         ExamInfo examInfo=(ExamInfo) intent.getSerializableExtra("examInfo");
-        Log.e("main",examInfo.toString());
+        Result result=(Result) intent.getSerializableExtra("result");
+        Log.e("main",result.getReason());
         TextView textView=(TextView) findViewById(R.id.tv_ExamInfo);
         textView.setText(examInfo.toString());
     }

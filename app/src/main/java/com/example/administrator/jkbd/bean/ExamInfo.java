@@ -58,4 +58,13 @@ public class ExamInfo implements Serializable{
                 "\n时限=" + limitTime +
                 "\n考题数量=" + questionCount;
     }
+
+    public ExamInfo clonee(){
+        ExamInfo examInfo=new ExamInfo();
+        examInfo.setLimitTime(limitTime);
+        examInfo.setQuestionCount(questionCount);
+        examInfo.setSubjectTitle(subjectTitle);
+        examInfo.setUid(uid);
+        return examInfo;
+    }
 }

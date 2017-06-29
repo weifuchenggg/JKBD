@@ -10,6 +10,7 @@ import android.widget.Toast;
 import com.example.administrator.jkbd.R;
 import com.example.administrator.jkbd.Utils.OkHttpUtils;
 import com.example.administrator.jkbd.bean.ExamInfo;
+import com.example.administrator.jkbd.bean.Result;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -23,22 +24,35 @@ public class MainActivity extends AppCompatActivity {
       //  Toast.makeText(this,"dd",Toast.LENGTH_LONG).show();
         OkHttpUtils<ExamInfo>  utils=new OkHttpUtils<>(getApplicationContext());
         String url="http://101.251.196.90:8080/JztkServer/examInfo";
+        final String url2="http://101.251.196.90:8080/JztkServer/getQuestions?testType=rand";
 
         utils.url(url).targetClass(ExamInfo.class).execute(new OkHttpUtils.OnCompleteListener<ExamInfo>(){
             @Override
             public void onSuccess(ExamInfo result) {
                 Log.e("main","success:"+result);
-                Intent intent=new Intent(MainActivity.this,QuestionActivity.class);
-                intent.putExtra("examInfo",result);
-                startActivity(intent);
+                final ExamInfo examInfo=result;
+                OkHttpUtils<Result>  utils2=new OkHttpUtils<>(getApplicationContext());
+                utils2.url(url2).targetClass(Result.class).execute(new OkHttpUtils.OnCompleteListener<Result>() {
+                    @Override
+                    public void onSuccess(Result result) {
+                        Intent intent=new Intent(MainActivity.this,QuestionActivity.class);
+                        Log.e("main","success:"+result);
+                        intent.putExtra("result",result);
+                        intent.putExtra("examInfo",examInfo);
+                        startActivity(intent);
+                    }
+                    @Override
+                    public void onError(String error) {
+                        Log.e("main","error");
+                    }
+                });
             }
-
             @Override
             public void onError(String error) {
                 Log.e("main","error");
             }
         });
-
+        /**/
     }
 
     public void btn_exit(View view) {

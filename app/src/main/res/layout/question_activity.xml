@@ -22,7 +22,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="15dp"
-        android:text="考试科目=c1\n时限=10分钟\n考题数量=100" />
+        android:text="考试科目=c1\n时限=10分钟\n考题数量=1000" />
     <TextView
         android:layout_width="match_parent"
         android:layout_height="1dp"
