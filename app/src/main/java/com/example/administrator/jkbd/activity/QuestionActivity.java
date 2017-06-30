@@ -1,15 +1,19 @@
 package com.example.administrator.jkbd.activity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.example.administrator.jkbd.R;
 import com.example.administrator.jkbd.bean.ExamInfo;
 import com.example.administrator.jkbd.bean.Result;
@@ -19,6 +23,7 @@ public class QuestionActivity extends AppCompatActivity {
     int k=0;
     TextView textView,tv_a,tv_b,tv_c,tv_d,tv_question;
     RadioButton rb_c,rb_d;
+    ImageView iv_p1;
     RadioGroup rg;
     ExamInfo examInfo;
     Result result;
@@ -37,6 +42,7 @@ public class QuestionActivity extends AppCompatActivity {
 
     }
     private void update(){
+        Glide.with(this).load(result.getResult().get(k).getUrl()).fitCenter().into(iv_p1);
         tv_a.setText("A."+result.getResult().get(k).getItem1());
         tv_b.setText("B."+result.getResult().get(k).getItem2());
         if(result.getResult().get(k).getItem3()==null || result.getResult().get(k).getItem3().equals("")){
@@ -66,6 +72,7 @@ public class QuestionActivity extends AppCompatActivity {
         rb_c=(RadioButton)findViewById(R.id.rb_c);
         rb_d=(RadioButton)findViewById(R.id.rb_d);
         rg=(RadioGroup)findViewById(R.id.rg);
+        iv_p1=(ImageView)findViewById(R.id.iv_p1);
         tv_question=(TextView) findViewById(R.id.tv_question);
     }
 
