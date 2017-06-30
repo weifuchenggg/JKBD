@@ -73,12 +73,11 @@ public class QuestionActivity extends AppCompatActivity {
         if(k<=99){
             if(rg.getCheckedRadioButtonId()==-1){
                 Toast.makeText(this,"答案未选择",Toast.LENGTH_SHORT).show();
-                return ;
             }
+
         }
         if(k==99){
-
-            Toast.makeText(this,"已经是最后一题,请交卷",Toast.LENGTH_LONG).show();
+            Toast.makeText(this,"答题完成,请交卷",Toast.LENGTH_LONG).show();
             return ;
         }
         k++;

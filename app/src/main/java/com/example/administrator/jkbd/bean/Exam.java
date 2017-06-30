@@ -30,6 +30,16 @@ public class Exam implements Serializable{
     private String item4;
     private String explains;
     private String url;
+    private int status=0;
+
+    public void setStatus(int status) {
+        this.status = status;
+    }
+
+    public int getStatus() {
+
+        return status;
+    }
 
     public int getId() {
         return id;
