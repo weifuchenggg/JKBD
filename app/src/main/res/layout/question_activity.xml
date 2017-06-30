@@ -81,23 +81,34 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         >
-        <CheckBox
+        <RadioGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+        <RadioButton
             android:layout_width="wrap_content"
             android:layout_marginTop="5dp"
             android:layout_marginLeft="10dp"
+
             android:layout_height="wrap_content" android:text="A"/>
-        <CheckBox
+        <RadioButton
             android:layout_width="wrap_content"
             android:layout_margin="5dp"
             android:layout_height="wrap_content" android:text="B"/>
-        <CheckBox
+        <RadioButton
         android:layout_width="wrap_content"
         android:layout_margin="5dp"
         android:layout_height="wrap_content" android:text="C"/>
-        <CheckBox
-        android:layout_width="wrap_content"
-        android:layout_margin="5dp"
-        android:layout_height="wrap_content" android:text="D"/>
+
+         <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:checked="false"
+                    android:duplicateParentState="false"
+                    android:text="D" />
+        </RadioGroup>
     </LinearLayout>
     <RelativeLayout
         android:id="@+id/rl_1"
