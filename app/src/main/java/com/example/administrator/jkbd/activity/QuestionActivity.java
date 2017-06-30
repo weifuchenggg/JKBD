@@ -20,8 +20,8 @@ import com.example.administrator.jkbd.bean.Result;
 
 public class QuestionActivity extends AppCompatActivity {
 
-    int k=0;
-    TextView textView,tv_a,tv_b,tv_c,tv_d,tv_question;
+    int k=0,score=0;
+    TextView textView,tv_a,tv_b,tv_c,tv_d,tv_question,tv_score;
     RadioButton rb_c,rb_d;
     ImageView iv_p1;
     RadioGroup rg;
@@ -38,10 +38,9 @@ public class QuestionActivity extends AppCompatActivity {
 
         init();  //初始化
         update();//更新
-
-
     }
     private void update(){
+        tv_score.setText("分数:"+score);
         Glide.with(this).load(result.getResult().get(k).getUrl()).fitCenter().into(iv_p1);
         tv_a.setText("A."+result.getResult().get(k).getItem1());
         tv_b.setText("B."+result.getResult().get(k).getItem2());
@@ -71,17 +70,34 @@ public class QuestionActivity extends AppCompatActivity {
         tv_d=(TextView) findViewById(R.id.tv_d);
         rb_c=(RadioButton)findViewById(R.id.rb_c);
         rb_d=(RadioButton)findViewById(R.id.rb_d);
+        tv_score=(TextView) findViewById(R.id.tv_score);
         rg=(RadioGroup)findViewById(R.id.rg);
         iv_p1=(ImageView)findViewById(R.id.iv_p1);
         tv_question=(TextView) findViewById(R.id.tv_question);
     }
 
     public void next(View view) {
+        if (k<99 && result.getResult().get(k+1).getStatus()!=0){
+            ++k;
+            update();
+            rg.check(result.getResult().get(k).getStatus());
+            return ;
+        }
         if(k<=99){
-            if(rg.getCheckedRadioButtonId()==-1){
+            if(rg.getCheckedRadioButtonId()!=-1){
+                result.getResult().get(k).setStatus(rg.getCheckedRadioButtonId());
+                String ans=result.getResult().get(k).getAnswer();
+                if(ans.equals("1")) ans="A"; else if(ans.equals("2")) ans="B";else if(ans.equals("3")) ans="C";else ans="D";
+               String p=((TextView)findViewById(rg.getCheckedRadioButtonId())).getText().toString();
+               if( ans.equals(p)){
+                    score++;
+                }else{
+                    Toast.makeText(this, "答案错误\n"+result.getResult().get(k).getExplains(),Toast.LENGTH_SHORT).show();
+                }
+            }
+            else{
                 Toast.makeText(this,"答案未选择",Toast.LENGTH_SHORT).show();
             }
-
         }
         if(k==99){
             Toast.makeText(this,"答题完成,请交卷",Toast.LENGTH_LONG).show();
@@ -89,7 +105,8 @@ public class QuestionActivity extends AppCompatActivity {
         }
         k++;
         update();
-
+        if (k<=99 && result.getResult().get(k).getStatus()!=0)
+            rg.check(result.getResult().get(k).getStatus());
     }
 
     public void prev(View view) {
