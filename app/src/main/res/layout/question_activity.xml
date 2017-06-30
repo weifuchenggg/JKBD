@@ -152,13 +152,14 @@
             android:onClick="next"
             android:text="下一页" />
     </RelativeLayout>
+
     <Button
         android:id="@+id/btn_commit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:drawableLeft="@mipmap/exam_commit32x32"
-        android:background="@null"
-        android:text="交卷"
         android:layout_gravity="center"
-        />
+        android:background="@null"
+        android:drawableLeft="@mipmap/exam_commit32x32"
+        android:onClick="commit"
+        android:text="交卷" />
 </LinearLayout>

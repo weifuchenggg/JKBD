@@ -3,6 +3,7 @@ package com.example.administrator.jkbd.activity;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -77,22 +78,18 @@ public class QuestionActivity extends AppCompatActivity {
     }
 
     public void next(View view) {
-        if (k<99 && result.getResult().get(k+1).getStatus()!=0){
-            ++k;
-            update();
-            rg.check(result.getResult().get(k).getStatus());
-            return ;
-        }
-        if(k<=99){
+
+        if(k<=99 && result.getResult().get(k).getStatus()==0){
             if(rg.getCheckedRadioButtonId()!=-1){
-                result.getResult().get(k).setStatus(rg.getCheckedRadioButtonId());
                 String ans=result.getResult().get(k).getAnswer();
                 if(ans.equals("1")) ans="A"; else if(ans.equals("2")) ans="B";else if(ans.equals("3")) ans="C";else ans="D";
-               String p=((TextView)findViewById(rg.getCheckedRadioButtonId())).getText().toString();
-               if( ans.equals(p)){
+                String p=((TextView)findViewById(rg.getCheckedRadioButtonId())).getText().toString();
+                result.getResult().get(k).setStatus(rg.getCheckedRadioButtonId());
+                 if( ans.equals(p)){
                     score++;
                 }else{
                     Toast.makeText(this, "答案错误\n"+result.getResult().get(k).getExplains(),Toast.LENGTH_SHORT).show();
+                    return ;
                 }
             }
             else{
@@ -105,16 +102,52 @@ public class QuestionActivity extends AppCompatActivity {
         }
         k++;
         update();
-        if (k<=99 && result.getResult().get(k).getStatus()!=0)
+        if ( result.getResult().get(k).getStatus()!=0)
             rg.check(result.getResult().get(k).getStatus());
     }
 
     public void prev(View view) {
-        if(k!=0){
-            k--;
-            update();
-        }else{
-            Toast.makeText(this,"已经是第一题",Toast.LENGTH_LONG).show();
+
+        if(result.getResult().get(k).getStatus()==0){
+            if(rg.getCheckedRadioButtonId()!=-1){
+                result.getResult().get(k).setStatus(rg.getCheckedRadioButtonId());
+                String ans=result.getResult().get(k).getAnswer();
+                if(ans.equals("1")) ans="A"; else if(ans.equals("2")) ans="B";else if(ans.equals("3")) ans="C";else ans="D";
+                String p=((TextView)findViewById(rg.getCheckedRadioButtonId())).getText().toString();
+                if( ans.equals(p)){
+                    score++;
+                }else{
+                    Toast.makeText(this, "答案错误\n"+result.getResult().get(k).getExplains(),Toast.LENGTH_SHORT).show();
+                    return ;
+                }
+            }
+            else{
+                Toast.makeText(this,"答案未选择",Toast.LENGTH_SHORT).show();
+            }
         }
+        if(k==0){
+            Toast.makeText(this,"已经是第一题",Toast.LENGTH_SHORT).show();
+            return ;
+        }
+        k--;
+        update();
+        if ( result.getResult().get(k).getStatus()!=0)
+            rg.check(result.getResult().get(k).getStatus());
+    }
+
+    public void commit(View view) {
+        Toast.makeText(this,"考试结束:\n成绩："+score,Toast.LENGTH_LONG).show();
+        CountDownTimer countDownTimer=new CountDownTimer(3000, 3000) {
+            @Override
+            public void onTick(long millisUntilFinished) {
+
+            }
+
+            @Override
+            public void onFinish() {
+                finish();
+            }
+        };
+        countDownTimer.start();
     }
 }
