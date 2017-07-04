@@ -79,7 +79,7 @@ public class QuestionActivity extends AppCompatActivity {
     }
 
     public void next(View view) {
-
+        int i;
         if(k<=99 && result.getResult().get(k).getStatus()==0){
             if(rg.getCheckedRadioButtonId()!=-1){
                 String ans=result.getResult().get(k).getAnswer();
