@@ -137,7 +137,7 @@ public class QuestionActivity extends AppCompatActivity {
     }
 
     public void commit(View view) {
-        Toast.makeText(this,"考试结束:\n成绩："+score,Toast.LENGTH_LONG).show();
+        Toast.makeText(this,"考试结束:\n成绩为："+score,Toast.LENGTH_SHORT).show();
         CountDownTimer countDownTimer=new CountDownTimer(3000, 3000) {
             @Override
             public void onTick(long millisUntilFinished) {
