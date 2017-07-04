@@ -63,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
        // Intent intent=new Intent(MainActivity.this,AllQuestionActivity.class);
        // startActivity(intent);
         OkHttpUtils<String>  utils2=new OkHttpUtils<>(getApplicationContext());
-        String url2="http://www.hao123.com";
+        String url2="http://192.168.1.100:8080/ssm/hello\\";
         utils2.url(url2).targetClass(String.class).execute(new OkHttpUtils.OnCompleteListener<String>() {
             @Override
             public void onSuccess(String result) {
