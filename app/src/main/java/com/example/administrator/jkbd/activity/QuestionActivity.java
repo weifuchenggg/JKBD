@@ -41,8 +41,9 @@ public class QuestionActivity extends AppCompatActivity {
         update();//更新
     }
     private void update(){
-        tv_score.setText("分数:"+score);
+        tv_score.setText("当前分数:"+score);
         Glide.with(this).load(result.getResult().get(k).getUrl()).fitCenter().into(iv_p1);
+
         tv_a.setText("A."+result.getResult().get(k).getItem1());
         tv_b.setText("B."+result.getResult().get(k).getItem2());
         if(result.getResult().get(k).getItem3()==null || result.getResult().get(k).getItem3().equals("")){
