@@ -141,7 +141,6 @@ public class QuestionActivity extends AppCompatActivity {
         CountDownTimer countDownTimer=new CountDownTimer(3000, 3000) {
             @Override
             public void onTick(long millisUntilFinished) {
-
             }
 
             @Override
