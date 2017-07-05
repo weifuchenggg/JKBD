@@ -142,7 +142,6 @@ public class QuestionActivity extends AppCompatActivity {
             @Override
             public void onTick(long millisUntilFinished) {
             }
-
             @Override
             public void onFinish() {
                 finish();
