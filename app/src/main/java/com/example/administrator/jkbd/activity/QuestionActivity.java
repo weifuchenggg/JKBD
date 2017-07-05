@@ -111,6 +111,7 @@ public class QuestionActivity extends AppCompatActivity {
 
         if(result.getResult().get(k).getStatus()==0){
             if(rg.getCheckedRadioButtonId()!=-1){
+
                 result.getResult().get(k).setStatus(rg.getCheckedRadioButtonId());
                 String ans=result.getResult().get(k).getAnswer();
                 if(ans.equals("1")) ans="A"; else if(ans.equals("2")) ans="B";else if(ans.equals("3")) ans="C";else ans="D";
